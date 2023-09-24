@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+
+  <title>BancoOnline</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Gerenciador de Contas Bancárias Online</h1>
+  </header>
+
+  <hr>
+
+  <h3>Inserir Detalhes da Conta -</h3>
+  <table>
+    <form id="formConta">
+      <tr>
+        <td><label for="agencia">Agência:</label></td>
+        <td><input type="text" id="agencia" required><br></td>
+      </tr>
+      <tr>
+        <td><label for="numero">Número da Conta:</label></td>
+        <td><input type="text" id="numero" required><br></td>
+      </tr>
+      <tr>
+        <td><label for="tipo">Tipo de Conta:</label></td>
+        <td>
+          <select id="tipo">
+            <option value="Conta Corrente">Conta Corrente</option>
+            <option value="Conta Poupança">Conta Poupança</option>
+            <option value="Conta Universitária">Conta Universitária</option>
+          </select><br>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="saldo">Saldo:</label></td>
+        <td><input type="text" id="saldo" required><br></td>
+      </tr>
+      <tr>
+        <td><label for="cartaoCredito">Limite do Cartão de Crédito:<br>(Apenas Conta Corrente)</label></td>
+        <td><input type="text" id="cartaoCredito"><br></td>
+        <td><button type="button" onclick="inserirConta()">Inserir</button></td>
+      </tr>
+    </form>
+  </table>
+
+  <hr>
+
+  <h3>Contas Bancárias Criadas -</h3>
+  <button type="button" onclick="visualizarContas()">Visualizar Contas</button>
+
+  <div id="listaContas"></div>
+
+  <hr>
+
+  <label for="contasDropdown">Selecione uma conta para deletar:</label>
+  <select id="contasDropdown"></select>
+  <button type="button" onclick="deletarConta()">Deletar</button>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
