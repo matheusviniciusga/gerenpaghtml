@@ -83,7 +83,6 @@ function inserirConta() {
 
     listaDeContas.push(conta);
 
-    // Limpar os campos do formulário
     document.getElementById("agencia").value = "";
     document.getElementById("numero").value = "";
     document.getElementById("tipo").value = "Conta Corrente";
@@ -108,7 +107,7 @@ function visualizarContas() {
                 ${conta.tipo === "Conta Corrente" ? `Cartão de Crédito: ${conta.getCartaoCredito()}<br>` : ""}
             </p>
         `;
-        // Preencher o dropdown com as contas existentes
+        
         contasDropdown.innerHTML += `<option value="${i}">${conta.numero} (${conta.tipo})</option>`;
     }
 }
@@ -121,7 +120,7 @@ function deletarConta() {
         const contaIndex = parseInt(contasDropdown.value);
         if (contaIndex >= 0 && contaIndex < listaDeContas.length) {
             listaDeContas.splice(contaIndex, 1);
-            visualizarContas(); // Atualizar a lista de contas após a exclusão
+            visualizarContas();
         }
     }
 }
