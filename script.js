@@ -83,6 +83,7 @@ function inserirConta() {
 
     listaDeContas.push(conta);
 
+    // Limpar os campos do formulário
     document.getElementById("agencia").value = "";
     document.getElementById("numero").value = "";
     document.getElementById("tipo").value = "Conta Corrente";
@@ -121,6 +122,33 @@ function deletarConta() {
         if (contaIndex >= 0 && contaIndex < listaDeContas.length) {
             listaDeContas.splice(contaIndex, 1);
             visualizarContas();
+        }
+    }
+}
+
+function sacarDepositar() {
+    const contasDropdown = document.getElementById("contasDropdown1");
+    const selectedIndex = contasDropdown.selectedIndex;
+
+    if (selectedIndex !== -1) {
+        const contaIndex = parseInt(contasDropdown.value);
+        if (contaIndex >= 0 && contaIndex < listaDeContas.length) {
+            const conta = listaDeContas[contaIndex];
+            const saque = parseFloat(document.getElementById("saque").value);
+            const deposito = parseFloat(document.getElementById("deposito").value);
+
+            if (!isNaN(saque) && saque > 0) {
+                if (conta.sacar(saque)) {
+                    visualizarContas();
+                } else {
+                    alert("Saldo insuficiente para o saque.");
+                }
+            }
+
+            if (!isNaN(deposito) && deposito > 0) {
+                conta.depositar(deposito);
+                visualizarContas();
+            }
         }
     }
 }
