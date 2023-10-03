@@ -5,10 +5,6 @@ body {
     background-color: black;
 }
 
-h1, h3, tr, td {
-    color: white;
-}
-
 nav {
     text-align: center;
     padding: 10px 0;
@@ -21,33 +17,22 @@ footer {
     width: 100%;
 }
 
-.listacor {
-    color: white;
-}
-
 a {
     color: black;
     text-decoration: none;
     margin-right: 20px;
 }
 
+.corbranca {
+    color: white;
+}
+
 .container {
+    color: white;
+    text-align: right;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-}
-
-.container2 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.coluna-esquerda {
-    width: 45%; 
-    padding: 10px;
-}
-
-
-.coluna-direita {
-    width: 45%;
-    padding: 10px;
+    width: 45% 0; 
+    padding: 10px 0;
 }
