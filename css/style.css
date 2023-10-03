@@ -12,11 +12,13 @@ h1, h3, tr, td {
 nav {
     text-align: center;
     padding: 10px 0;
+    width: 100%;
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
+    width: 100%;
 }
 
 .listacor {
