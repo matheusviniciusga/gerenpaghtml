@@ -12,7 +12,7 @@
 <body>
 
   <header>
-    <h1>Gerenciador de Contas Bancárias Online</h1>
+    <h1 class="corbranca">Gerenciador de Contas Bancárias Online</h1>
   </header>
 
   <nav style="background-color: white;">
@@ -21,87 +21,82 @@
     <a href="#">Sobre</a>
   </nav>
 
-  <hr>
+  <section>
 
-  <div class="container">
-
-    <div class="coluna-esquerda">
-      <h3>Inserir Detalhes da Conta -</h3>
-  <table>
-    <form id="formConta">
-      <tr>
-        <td><label for="agencia">Agência:</label></td>
-        <td><input type="text" id="agencia" required><br></td>
-      </tr>
-      <tr>
-        <td><label for="numero">Número da Conta:</label></td>
-        <td><input type="number" id="numero" required><br></td>
-      </tr>
-      <tr>
-        <td><label for="tipo">Tipo de Conta:</label></td>
-        <td>
-          <select id="tipo">
-            <option value="Conta Corrente">Conta Corrente</option>
-            <option value="Conta Poupança">Conta Poupança</option>
-            <option value="Conta Universitária">Conta Universitária</option>
-          </select><br>
-        </td>
-      </tr>
-      <tr>
-        <td><label for="saldo">Saldo:</label></td>
-        <td><input type="number" id="saldo" required><br></td>
-      </tr>
-      <tr>
-        <td><label for="cartaoCredito">Limite do Cartão de Crédito:<br>(Apenas Conta Corrente)</label></td>
-        <td><input type="number" id="cartaoCredito"><br></td>
-        <td><button type="button" onclick="inserirConta()">Inserir</button></td>
-      </tr>
-    </form>
+    <h3 class="corbranca">Inserir Detalhes da Conta -</h3>
+    <table>
+        <form id="formConta">
+        <tr>
+            <td class="corbranca"><label for="agencia" >Agência:</label></td>
+            <td><input type="text" id="agencia" required><br></td>
+        </tr>
+        <tr>
+            <td class="corbranca"><label for="numero">Número da Conta:</label></td>
+            <td><input type="number" id="numero" required><br></td>
+        </tr>
+        <tr>
+            <td class="corbranca"><label for="tipo">Tipo de Conta:</label></td>
+            <td>
+            <select id="tipo">
+                <option value="Conta Corrente">Conta Corrente</option>
+                <option value="Conta Poupança">Conta Poupança</option>
+                <option value="Conta Universitária">Conta Universitária</option>
+            </select><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="corbranca"><label for="saldo">Saldo:</label></td>
+            <td><input type="number" id="saldo" required><br></td>
+        </tr>
+        <tr>
+            <td class="corbranca"><label for="cartaoCredito">Limite do Cartão de Crédito:<br>(Apenas Conta Corrente)</label></td>
+            <td><input type="number" id="cartaoCredito"><br></td>
+            <td><button type="button" onclick="inserirConta()">Inserir</button></td>
+        </tr>
+        </form>
   </table>
 
   <hr>
 
-  <h3>Contas Bancárias Criadas -</h3>
+  <h3 class="corbranca">Contas Bancárias Criadas -</h3>
   <table>
     <tr>
       <td><button type="button" onclick="visualizarContas()">Visualizar Contas</button></td>
-      <td>
+      <td class="corbranca">
         <label for="contasDropdown">Selecione uma conta para Deletar:</label>
         <select id="contasDropdown"></select>
         <button type="button" onclick="deletarConta()">Deletar</button>
       </td>
     </tr>
   </table>
+  
+  <div class="container">
+    <h4>Lista das Contas Criadas -</h4>
+    <div class="container" id="listaContas"></div>
+  </div>
+
+  </section>
 
   <hr>
 
-  <h3>Depósito e Saque -</h3>
+  <h3 class="corbranca">Depósito e Saque -</h3>
   <table>
     <tr>
-      <td><label for="contasDropdown1">Selecione uma conta: <br> (Depósito ou Saque)</label></td>
+      <td class="corbranca"><label for="contasDropdown1">Selecione uma conta: <br> (Depósito ou Saque)</label></td>
       <td><select id="contasDropdown1"></select></td>
     </tr>
     <tr>
-      <td><label for="saque">Valor do Saque:</label></td>
+      <td class="corbranca"><label for="saque">Valor do Saque:</label></td>
       <td><input type="number" id="saque"/></td>
     </tr>
     <tr>
-      <td><label for="deposito">Valor do Depósito:</label></td>
+      <td class="corbranca"><label for="deposito">Valor do Depósito:</label></td>
       <td><input type="number" id="deposito"/></td>
       <td><button onclick="sacarDepositar()">Sacar/Depositar</button></td>
     </tr>
   </table>
-    </div>
-
-  </div>
-
-  <hr>
-  <div class="container2">
-    <div class="coluna-direita">
-      <h3>Lista das Contas Bancárias -</h3>
-      <div class="listacor" id="listaContas"></div>
-    </div>
-  </div>
+  
+  <br>
 
   <footer style="background-color: white;">
     <a href="#">Suporte</a>
